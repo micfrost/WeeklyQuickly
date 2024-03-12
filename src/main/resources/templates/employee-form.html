@@ -44,7 +44,14 @@
     </div>
 
 
+
     <form th:action="@{/process-employee-form}" th:object="${employee}" method="post">
+
+        <div class="row">
+            <div class="col">
+                <h3>Personal Details</h3>
+            </div>
+        </div>
 
         <div class="row g-3">
 
@@ -101,6 +108,57 @@
             </div>
         </div>
 
+
+
+
+        <div class="row g-3">
+
+            <!-- Date of Birth -->
+            <div class="form-group col-sm-6">
+                <label class="form-label" for="dateOfBirth">Date of Birth</label>
+
+                <input class="form-control" type="date" id="dateOfBirth" th:field="*{dateOfBirth}"
+                       required/>
+
+                <div class="invalid-feedback">Required</div>
+
+                <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"
+                      class="error"></span>
+            </div>
+
+            <!--        Phone-->
+            <div class="form-group col-sm-6">
+                <label class="form-label" for="phone">Phone</label>
+
+                <input class="form-control" type="text" id="phone" th:field="*{phoneNumber}"
+                       required/>
+
+                <div class="invalid-feedback">Required</div>
+
+                <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"
+                      class="error"></span>
+            </div>
+        </div>
+
+
+        <div class="row g-3">
+
+            <!-- Image URL -->
+            <div class="form-group col-sm-6">
+                <label class="form-label" for="imageUrl">Image URL</label>
+
+                <input class="form-control" type="url" id="imageUrl" th:field="*{imageUrl}" value="https://source.unsplash.com/random/100x100/?person" />
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col">
+                <h3>Address Details</h3>
+            </div>
+        </div>
 
         <div class="row g-3">
 
@@ -162,50 +220,15 @@
         </div>
 
 
-        <div class="row g-3">
 
-            <!-- Date of Birth -->
-            <div class="form-group col-sm-6">
-                <label class="form-label" for="dateOfBirth">Date of Birth</label>
+        <hr>
 
-                <input class="form-control" type="date" id="dateOfBirth" th:field="*{dateOfBirth}"
-                       required/>
 
-                <div class="invalid-feedback">Required</div>
-
-                <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"
-                      class="error"></span>
-            </div>
-
-            <!--        Phone-->
-            <div class="form-group col-sm-6">
-                <label class="form-label" for="phone">Phone</label>
-
-                <input class="form-control" type="text" id="phone" th:field="*{phoneNumber}"
-                       required/>
-
-                <div class="invalid-feedback">Required</div>
-
-                <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"
-                      class="error"></span>
+        <div class="row">
+            <div class="col">
+                <h3>Employee Details</h3>
             </div>
         </div>
-
-
-        <div class="row g-3">
-
-            <!-- Image URL -->
-            <div class="form-group col-sm-6">
-                <label class="form-label" for="imageUrl">Image URL</label>
-
-                <input class="form-control" type="url" id="imageUrl" th:field="*{imageUrl}" value="https://source.unsplash.com/random/100x100/?person" />
-
-            </div>
-        </div>
-
-
-        <hr class="my-4">
-
 
         <div class="row g-3">
 
