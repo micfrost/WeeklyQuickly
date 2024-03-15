@@ -13,11 +13,11 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 
 @Controller
+@RequestMapping("/employee")
 public class EmployeeController {
 
     private EmployeeService employeeService;
@@ -63,14 +63,14 @@ public class EmployeeController {
     @GetMapping("/employee-list")
     public String displayEmployeeList(Model model) {
         model.addAttribute("employees", employees);
-        return "employee-list";
+        return "employee/employee-list";
     }
 
 //  show the form for adding a new employee
     @GetMapping("/employee-form")
     public String displayEmployeeForm(Model model) {
         model.addAttribute("employee", new Employee());
-        return "employee-form";
+        return "employee/employee-form";
     }
 
 //   process the form for adding a new employee
@@ -81,7 +81,7 @@ public class EmployeeController {
             Model model) {
 
         if (bindingResult.hasErrors()) {
-            return "employee-form";
+            return "employee/employee-form";
 
         } else {
             // Save the new employee
@@ -95,7 +95,7 @@ public class EmployeeController {
                 model.addAttribute("lastEmployee", lastEmployee);
             }
 
-            return "employee-confirmation";
+            return "employee/employee-confirmation";
         }
     }
 
