@@ -12,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
 
 
@@ -30,14 +29,14 @@ public class EmployeeController {
 
 //        List<Employee> startEmployees = new ArrayList<>();
 
-        Employee newEmployee = new Employee(
-                "Thom", "Gold", "thom@gold.com", false, "ABCD1234!",
-                "Germany", "Berlin", "10001", "Breslauer Platz", 123,
-                "9876543210", LocalDate.of(1990, 5, 15),
-                "https://source.unsplash.com/random/100x100/?person",
-                "The first Employee", "Finance Manager", "Weekly Park",
-                "2024-03-11", true, 75000.0, "Finance", "Finance"
-        );
+//        Employee newEmployee = new Employee(
+//                "Thom", "Gold", "thom@gold.com", false, "ABCD1234!",
+//                "Germany", "Berlin", "10001", "Breslauer Platz", 123,
+//                "9876543210", LocalDate.of(1990, 5, 15),
+//                "https://source.unsplash.com/random/100x100/?person",
+//                "The first Employee", "Finance Manager", "Weekly Park",
+//                "2024-03-11", true, 75000.0, "Finance", "Finance"
+//        );
 
 //        startEmployees.add(newEmployee);
 //
@@ -46,7 +45,7 @@ public class EmployeeController {
 //            employeeService.saveEmployee(startEmployee);
 //        }
 
-        employeeService.saveEmployee(newEmployee);
+//        employeeService.saveEmployee(newEmployee);
 
         this.employees = employeeService.getAllEmployees();
     }
@@ -95,7 +94,7 @@ public class EmployeeController {
                 model.addAttribute("lastEmployee", lastEmployee);
             }
 
-            return "employee/employee-confirmation";
+            return "employee-success";
         }
     }
 

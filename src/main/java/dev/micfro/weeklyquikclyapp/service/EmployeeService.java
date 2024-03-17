@@ -27,13 +27,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    public Optional<Employee> updateEmployee(Long id, Employee updatedEmployee) {
-        return employeeRepository.findById(id)
-                .map(existingEmployee -> {
-                    updatedEmployee.setId(id);
-                    return employeeRepository.save(updatedEmployee);
-                });
-    }
+
 
     // Read
 

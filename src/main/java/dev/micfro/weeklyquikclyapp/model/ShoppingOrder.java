@@ -2,7 +2,8 @@ package dev.micfro.weeklyquikclyapp.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -12,50 +13,48 @@ public class ShoppingOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "order_meal",
-            joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "meal_id")
-    )
+    @ManyToMany
+    private List<ShoppingOrderLine> shoppingOrderLines;
+
+    @OneToMany
+    private List<OrderLine> orderLines;
+
+    @ManyToMany
     private List<Meal> meals;
 
 
-    private String orderStatus;  //ENUM: OPEN, COMPLETED, CANCELLED
-
-    @Temporal(TemporalType.TIMESTAMP)
-    Date orderStartDate;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    Date orderEndDate;
+    @Enumerated(EnumType.STRING)
+    private ShoppingOrderStatus shoppingOrderStatus;
 
 
-    private String orderDeliveryTime;
-    private String orderDeliveryDay;
-    private String orderDeliveryFrequency; //ENUM
+    private LocalDateTime placedDateTime;
+    private LocalDateTime packedDateTime;
+    private LocalDateTime shippedDateTime;
+    private LocalDateTime deliveredDateTime;
+    private LocalDateTime cancelledDateTime;
+
+    // PAYMENT
+//    private Long PaymentId;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
+
+    private BigDecimal paymentAmount;
+
+    private LocalDateTime paymentDateTime;
+
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
 
 
-
-
-
-    private String orderPaymentMethod;  //ENUM
-    private String orderPaymentStatus;  //ENUM
-    private String orderPaymentDate;
-    private String orderPaymentTime;
-    private String orderPaymentConfirmationNumber;
-    private String orderPaymentTransactionId;
-    private String orderPaymentAmount;
-    private String orderPaymentMethodType;  //ENUM
-
-
-
-// Constructor
+    // Constructor
     public ShoppingOrder() {
     }
 
+    // toString
+
+    // Getters and Setters
 
 }

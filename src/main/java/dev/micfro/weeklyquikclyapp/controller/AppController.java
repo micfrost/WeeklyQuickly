@@ -7,9 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AppController {
 
+
     @GetMapping("/")
     public String home() {
         return "home";
+    }
+
+
+    @GetMapping("/home-login")
+    public String homelogin() {
+        return "home-login";
     }
 
     @GetMapping("/customer")
@@ -27,9 +34,9 @@ public class AppController {
         return "/secret/admin";
     }
 
-    @GetMapping("/admin-dashbord")
+    @GetMapping("/admin/dashboard")
     public String admindashbord() {
-        return "/admin-dashbord";
+        return "admin/dashboard";
     }
 
 

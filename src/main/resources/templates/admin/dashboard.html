@@ -1,4 +1,4 @@
-<!--admin-dashbord.html-->
+<!--admin/dashboard.html-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,13 +28,13 @@
     <div class="row">
         <div class="col">
 
-            <a th:href="@{/}" class="btn btn-primary">Home</a>
+            <a th:href="@{/admin/dashboard}" class="btn btn-primary">admin/dashboard</a>
 
             <a th:href="@{/employee/employee-form}" class="btn btn-primary" role="button">Add Employee</a>
 
             <a th:href="@{/employee/employee-list}" class="btn btn-primary" role="button">Employee List</a>
 
-            <a th:href="@{/login-page.html}" class="btn btn-primary" role="button">Login</a>
+            <a th:href="@{/templates/login-page}" class="btn btn-primary" role="button">Login</a>
             <hr>
         </div>
 
@@ -57,7 +57,6 @@
                     <h5 class="card-title">Customer</h5>
                     <p class="card-text">Log in as a customer.</p>
                     <a href="/customer-login" class="btn btn-primary">Login</a>
-                    <a href="/customer-registration" class="btn btn-secondary">Register</a>
                 </div>
             </div>
         </div>

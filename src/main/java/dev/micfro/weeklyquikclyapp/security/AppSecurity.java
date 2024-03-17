@@ -30,18 +30,20 @@ public class AppSecurity {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(config -> config
+//                        With Security OFF
+                        .anyRequest().permitAll()
+//
 
-//                        .requestMatchers("/").permitAll()
-
-                                .requestMatchers("/customer").hasRole("CUSTOMER")
-                                .requestMatchers("/customer/**").hasRole("CUSTOMER")
-
-                                .requestMatchers("/employee/**").hasRole("EMPLOYEE")
-                                .requestMatchers("/employee").hasRole("EMPLOYEE")
-
-                                .requestMatchers("/secret/**").hasRole("ADMIN")
-
-                                .anyRequest().authenticated()
+//                        With Security ON
+//                                .requestMatchers("/customer").hasRole("CUSTOMER")
+//                                .requestMatchers("/customer/**").hasRole("CUSTOMER")
+//
+//                                .requestMatchers("/employee/**").hasRole("EMPLOYEE")
+//                                .requestMatchers("/employee").hasRole("EMPLOYEE")
+//
+//                                .requestMatchers("/admin/**").hasRole("ADMIN")
+//
+//                                .anyRequest().authenticated()
                 )
 
                 .formLogin(form -> form

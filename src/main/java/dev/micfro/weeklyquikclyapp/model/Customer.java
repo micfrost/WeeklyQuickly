@@ -2,52 +2,72 @@ package dev.micfro.weeklyquikclyapp.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 
 @Entity
-public class Customer {
+public class Customer extends User  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     // USER DETAILS
+    @OneToOne()
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 
 
-    // Food preferences
+    // Food  preferences
     private boolean isVegetarian;
+
     private boolean isVegan;
+
     private boolean isGlutenFree;
+
     private boolean isLactoseFree;
+
     private boolean isDiabetic;
+
     private boolean isAllergicToNuts;
 
-    // Family details
-    private Integer numberOfChildren;
-    private Integer numberOfAdults;
 
-    // Budget details
-    private Double BudgetPerWeekPerFamily;
-    private Double BudgetPerWeekPerPerson;
-    private Double BudgetPerMealPerFamily;
-    private Double BudgetPerMealPerPerson;
+    // Persons in household
+    private Integer numberOfPersonsInHousehold;
 
-    // Delivery details
-    private String deliveryTime;
-    private String deliveryDay;
-    private String deliveryFrequency;
+
+    // Budget preferences
+    private BigDecimal BudgetPerWeekPerFamily;
+
+    private BigDecimal BudgetPerWeekPerPerson;
+
+    private BigDecimal BudgetPerMealPerFamily;
+
+    private BigDecimal BudgetPerMealPerPerson;
+
+
+    // Delivery preferences
+    private LocalTime deliveryTime;
+    private LocalDate deliveryDay;
+    @Enumerated(EnumType.STRING)
+    private DeliveryFrequency deliveryFrequency; // ENUM
+
 
     // Marketing preferences
     private boolean isAcceptingMarketingEmails;
     private boolean isAcceptingMarketingTexts;
 
-    // Payment details
-    private String paymentMethod;  //ENUM
+
+    // Payment preferences
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
     private String paypalEmail;
 
 
-    // Purchase history details
+    // Purchase history
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<ShoppingOrder> shoppingOrders;
 
@@ -66,7 +86,7 @@ public class Customer {
     @ElementCollection
     private List<Long> mealIds;
 
-    private Double totalAmountSpent;
+    private BigDecimal totalAmountSpent;
     private Integer totalOrders;
     private Integer totalMealsOrdered;
 
@@ -79,6 +99,8 @@ public class Customer {
 
     public Customer() {
     }
+
+    // TO STRING
 
     // GETTERS AND SETTERS
 
