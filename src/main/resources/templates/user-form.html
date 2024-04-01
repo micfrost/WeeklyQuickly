@@ -1,0 +1,36 @@
+<!-- user-form.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{fragments/head :: common-head}"></th:block>
+
+<body>
+
+<div th:align="center">
+
+    <th:block th:replace="~{fragments/header :: common-header}"></th:block>
+    <th:block th:replace="~{fragments/navbar :: common-navbar}"></th:block>
+
+
+    <h2>Add User</h2>
+    <form action="#" th:action="@{/add-user}" th:object="${user}" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" th:field="*{username}" required>
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" th:field="*{password}" required>
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <th:block th:replace="~{fragments/footer :: common-footer}"></th:block>
+
+</div>
+
+</body>
+
+</html>
