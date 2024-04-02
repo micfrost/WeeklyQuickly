@@ -38,3 +38,13 @@ WeeklyQuickly is an advanced e-commerce web application built using Java and the
 
 ## Author
 Created by Michal Frost.
+
+![Screenshot from 2024-04-02 08-11-48.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-11-48.png)
+![Screenshot from 2024-04-02 08-11-55.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-11-55.png)
+![Screenshot from 2024-04-02 08-12-01.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-12-01.png)
+![Screenshot from 2024-04-02 08-12-08.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-12-08.png)
+![Screenshot from 2024-04-02 08-12-13.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-12-13.png)
+![Screenshot from 2024-04-02 08-12-16.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-12-16.png)
+![Screenshot from 2024-04-02 08-12-21.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-12-21.png)
+![Screenshot from 2024-04-02 08-12-23.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-12-23.png)
+![Screenshot from 2024-04-02 08-12-33.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-04-02%2008-12-33.png)
